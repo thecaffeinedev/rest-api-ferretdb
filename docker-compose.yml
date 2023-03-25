@@ -1,0 +1,30 @@
+services:
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_USER=username
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=ferretdb
+    volumes:
+      - ./data:/var/lib/postgresql/data
+
+  ferretdb:
+    image: ghcr.io/ferretdb/ferretdb
+    ports:
+      - 27017:27017
+    environment:
+      - FERRETDB_POSTGRESQL_URL=postgres://postgres:5432/ferretdb
+  api:
+    build:
+      context: './'
+    container_name: "ferretdb-rest-api"
+    ports:
+      - "8080:8080"
+    environment:
+      - MONGO_URL=mongodb://username:password@ferretdb/userdb?authMechanism=PLAIN
+
+
+
+networks:
+  default:
+    name: ferretdb
