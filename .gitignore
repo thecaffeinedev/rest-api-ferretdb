@@ -12,6 +12,7 @@
 *.so
 *.dylib
 data/
+*.env
 # Test binary, built with `go test -c`
 *.test
 
