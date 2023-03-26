@@ -38,7 +38,7 @@ task run
 
 After the build is successful, You can access the application on port `8080` 
 
-### Endpoints
+## Endpoints
 
 ```markdown
 | Name        | HTTP Method | Route            |
@@ -140,14 +140,14 @@ Response:
 }
 ```
 
-### Technologies Used:
+## Technologies Used:
 
 - [Docker + Docker-Compose](https://docs.docker.com/compose/)
 - [FerretDB](https://docs.ferretdb.io/)
 - [Go](https://go.dev/) (Of course)
 - [Task](https://taskfile.dev/)
 
-### Frameworks + Libraries Used
+## Frameworks + Libraries Used
 
 - [sirupsen/logrus](https://github.com/sirupsen/logrus)
 - [Go-Chi](https://go-chi.io/#/)
